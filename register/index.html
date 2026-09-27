@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up — Sitenexs Dashboard</title>
+    
+    <!-- Meta SEO -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* === CSS VARIABLES (Konsisten dengan Halaman Lain) === */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --accent: #10b981;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            
+            --border-subtle: #cbd5e1;
+            --border-medium: #94a3b8;
+            --border-accent: #3b82f6;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+            
+            --radius-md: 0.35rem;
+            --radius-lg: 0.75rem;
+            --radius-full: 9999px;
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* === RESET & BASE === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.25rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* === AUTH CONTAINER === */
+        .auth-wrapper {
+            width: 100%;
+            max-width: 460px;
+        }
+
+        .auth-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 800;
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 0.85rem;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logo-img {
+            height: 32px;
+            width: auto;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-full);
+            padding: 2px;
+            object-fit: contain;
+        }
+
+        .auth-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+        }
+
+        .auth-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
+        }
+
+        /* === FORM ELEMENTS === */
+        .form-group {
+            margin-bottom: 0.9rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: var(--text-main);
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.6rem 0.75rem 0.6rem 2.35rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-subtle);
+            background-color: #ffffff;
+            font-size: 0.825rem;
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        select.form-control {
+            padding-left: 2.35rem;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 0.75rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .password-toggle:hover {
+            color: var(--text-main);
+        }
+
+        .form-control:hover {
+            border-color: var(--border-medium);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--border-accent);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+        }
+
+        .terms-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin: 1rem 0;
+            line-height: 1.4;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.65rem 1.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid transparent;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary-dark);
+            box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+            border-radius: var(--radius-md);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.25rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .back-home {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+        .back-home:hover {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-wrapper">
+        <div class="auth-card">
+            <div class="auth-header">
+                <a href="index.html" class="logo">
+                    <img src="logo.png" alt="Sitenexs Logo" class="logo-img" onerror="this.style.display='none'">
+                    <span class="logo-text">Sitenexs</span>
+                </a>
+                <h1 class="auth-title">Buat Akun Usaha</h1>
+                <p class="auth-desc">Mulai digitalisasi bisnis Anda bersama Sitenexs</p>
+            </div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label>Nama Pemilik / Pengelola</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" required placeholder="Contoh: Budi Santoso" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Usaha / Toko</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-store input-icon"></i>
+                        <input type="text" required placeholder="Masukan Bisnis kamu"  class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>No. WhatsApp Aktif</label>
+                    <div class="input-wrapper">
+                        <i class="fab fa-whatsapp input-icon" style="color: #10b981;"></i>
+                        <input type="tel" required placeholder="08xx xxxx xxxx" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Layanan yang Minati</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-cubes input-icon"></i>
+                        <select class="form-control" required>
+                            <option value="" disabled selected>Pilih layanan yang diminati...</option>
+                            <option>Website Profil UMKM / Katalog</option>
+                            <option>Sistem Presensi Karyawan (GPS)</option>
+                            <option>Aplikasi Kasir / POS Toko</option>
+                            <option>Menu QR Code / Booking System</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Kata Sandi (Password)</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input type="password" id="password-input" required placeholder="Minimal 6 karakter" class="form-control" style="padding-right: 2.35rem;">
+                        <button type="button" id="toggle-password" class="password-toggle" aria-label="Tampilkan Password">
+                            <i class="fas fa-eye" id="eye-icon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <p class="terms-text">
+                    Dengan mendaftar, Anda menyetujui ketentuan layanan serta kebijakan privasi pendampingan usaha dari Sitenexs.
+                </p>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i> Daftar Sekarang
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                Sudah punya akun Sitenexs? <a href="login.html">Masuk di sini</a>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i> Kembali ke Beranda Utama
+        </a>
+    </div>
+
+    <script>
+        // Fitur Lihat / Sembunyikan Password
+        const togglePasswordBtn = document.getElementById('toggle-password');
+        const passwordInput = document.getElementById('password-input');
+        const eyeIcon = document.getElementById('eye-icon');
+
+        togglePasswordBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            eyeIcon.classList.toggle('fa-eye', !isPassword);
+            eyeIcon.classList.toggle('fa-eye-slash', isPassword);
+        });
+
+        // Simulasi Aksi Register
+        document.getElementById('register-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Pendaftaran berhasil! Tim Sitenexs akan segera menghubungi WhatsApp Anda untuk pengaturan sistem.');
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
