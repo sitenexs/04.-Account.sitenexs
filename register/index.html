@@ -229,9 +229,51 @@
             z-index: 2;
         }
 
-        /* Khusus textarea agar ikon berada di atas */
         .textarea-wrapper .input-icon {
             top: 0.75rem;
+        }
+
+        /* Style untuk Preview Logo Bisnis */
+        .logo-preview-container {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #f1f5f9;
+            border-radius: var(--radius-md);
+            border: 1px dashed var(--border-subtle);
+        }
+        .logo-preview-container.show {
+            display: flex;
+        }
+        .logo-preview-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .logo-preview-info {
+            flex: 1;
+            font-size: 0.75rem;
+            color: var(--text-main);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .logo-remove-btn {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 0.85rem;
+            padding: 4px;
+            transition: var(--transition);
+        }
+        .logo-remove-btn:hover {
+            color: #dc2626;
         }
 
         .password-toggle {
@@ -470,12 +512,18 @@
                     </div>
                 </div>
 
-                <!-- Tambahan: Logo Bisnis (Opsional) -->
+                <!-- Input Logo Bisnis + Area Preview -->
                 <div class="form-group">
                     <label>Logo Bisnis / Toko <span style="font-weight: normal; color: var(--text-muted);">(Opsional)</span></label>
                     <div class="input-wrapper">
                         <i class="fas fa-image input-icon"></i>
                         <input type="file" id="store-logo" accept="image/*" class="form-control" style="padding-top: 0.5rem; padding-bottom: 0.5rem; cursor: pointer;">
+                    </div>
+                    <!-- Container Preview Gambar Logo -->
+                    <div id="logo-preview-box" class="logo-preview-container">
+                        <img id="logo-preview-img" src="" alt="Pratinjau Logo" class="logo-preview-img">
+                        <div class="logo-preview-info" id="logo-file-name"></div>
+                        <button type="button" id="logo-remove-btn" class="logo-remove-btn" title="Hapus Logo"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>
 
@@ -619,6 +667,33 @@
         setTimeout(() => toast.remove(), 300);
     }
 
+    // Script untuk Pratinjau Gambar Logo
+    const logoInput = document.getElementById('store-logo');
+    const logoPreviewBox = document.getElementById('logo-preview-box');
+    const logoPreviewImg = document.getElementById('logo-preview-img');
+    const logoFileName = document.getElementById('logo-file-name');
+    const logoRemoveBtn = document.getElementById('logo-remove-btn');
+
+    logoInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                logoPreviewImg.src = e.target.result;
+                logoFileName.textContent = file.name;
+                logoPreviewBox.classList.add('show');
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    logoRemoveBtn.addEventListener('click', function() {
+        logoInput.value = '';
+        logoPreviewImg.src = '';
+        logoFileName.textContent = '';
+        logoPreviewBox.classList.remove('show');
+    });
+
     // Auto-save form inputs ke localStorage (kecuali password & file logo)
     const fields = ['owner-name', 'store-name', 'store-address', 'store-social', 'email-input', 'whatsapp', 'service-select'];
     fields.forEach(id => {
@@ -704,9 +779,6 @@
             // 1. Buat akun menggunakan Firebase Authentication
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
-
-            // Catatan: Jika ingin menyimpan file logo ke Firebase Storage, Anda bisa menambahkannya di sini.
-            // Untuk saat ini, data teks lengkap termasuk alamat & media sosial disimpan ke Firestore.
 
             // 2. Simpan data profil lengkap ke Firestore database pada koleksi "users"
             await setDoc(doc(db, "users", user.uid), {
