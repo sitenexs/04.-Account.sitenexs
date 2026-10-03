@@ -11,7 +11,7 @@
     <meta name="language" content="id-ID">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="theme-color" content="#2563eb">
-    <meta name="canonical" content="https://account.sitenexs.site/register">
+    <link rel="canonical" href="https://account.sitenexs.site/register">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
     <meta property="og:title" content="Daftar Akun & Buat Dashboard Sitenexs | Registrasi Usaha">
@@ -50,31 +50,20 @@
             --primary-light: #eff6ff;
             --primary-glow: rgba(37, 99, 235, 0.15);
             --accent: #10b981;
-            
             --bg-body: #f8fafc;
             --bg-card: rgba(255, 255, 255, 0.95);
-            
             --text-main: #0f172a;
             --text-muted: #64748b;
-            
             --border-subtle: #e2e8f0;
             --border-focus: #3b82f6;
-            
             --shadow-card: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
             --shadow-btn: 0 4px 12px rgba(37, 99, 235, 0.25);
-            
             --radius-md: 0.5rem;
             --radius-lg: 1rem;
-            
             --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-body);
@@ -88,34 +77,10 @@
                 radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.06) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
         }
-
-        a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        a:hover {
-            color: var(--primary-dark);
-        }
-
-        .auth-wrapper {
-            width: 100%;
-            max-width: 460px;
-            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        a { text-decoration: none; color: var(--primary); font-weight: 600; transition: var(--transition); }
+        a:hover { color: var(--primary-dark); }
+        .auth-wrapper { width: 100%; max-width: 460px; animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
         .auth-card {
             background-color: var(--bg-card);
             backdrop-filter: blur(10px);
@@ -124,69 +89,20 @@
             padding: 2.25rem 2rem;
             box-shadow: var(--shadow-card);
         }
-
-        .auth-header {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .logo {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 800;
-            font-size: 1.25rem;
-            color: var(--text-main);
-            margin-bottom: 1rem;
-        }
-
+        .auth-header { text-align: center; margin-bottom: 1.5rem; }
+        .logo { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 800; font-size: 1.25rem; color: var(--text-main); margin-bottom: 1rem; }
         .logo-text {
             background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #60a5fa 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
-        .logo-img {
-            height: 32px;
-            width: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-        }
-
-        .auth-title {
-            font-size: 1.35rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: var(--text-main);
-            margin-bottom: 0.3rem;
-        }
-
-        .auth-desc {
-            font-size: 0.8125rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.775rem;
-            font-weight: 600;
-            margin-bottom: 0.35rem;
-            color: var(--text-main);
-        }
-
-        .input-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
+        .logo-img { height: 32px; width: 32px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+        .auth-title { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text-main); margin-bottom: 0.3rem; }
+        .auth-desc { font-size: 0.8125rem; color: var(--text-muted); font-weight: 400; }
+        .form-group { margin-bottom: 1rem; }
+        .form-group label { display: block; font-size: 0.775rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-main); }
+        .input-wrapper { position: relative; display: flex; align-items: center; }
         .form-control {
             width: 100%;
             padding: 0.65rem 0.875rem 0.65rem 2.45rem;
@@ -198,17 +114,8 @@
             transition: var(--transition);
             font-family: inherit;
         }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 70px;
-            padding-top: 0.65rem;
-        }
-
-        .form-control::placeholder {
-            color: #94a3b8;
-        }
-
+        textarea.form-control { resize: vertical; min-height: 70px; padding-top: 0.65rem; }
+        .form-control::placeholder { color: #94a3b8; }
         select.form-control {
             appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -218,276 +125,51 @@
             padding-right: 2.25rem;
             cursor: pointer;
         }
-
-        .input-icon {
-            position: absolute;
-            left: 0.875rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            transition: var(--transition);
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .textarea-wrapper .input-icon {
-            top: 0.75rem;
-        }
-
-        /* Style untuk Preview Logo Bisnis */
-        .logo-preview-container {
-            display: none;
-            align-items: center;
-            gap: 10px;
-            margin-top: 8px;
-            padding: 8px 12px;
-            background: #f1f5f9;
-            border-radius: var(--radius-md);
-            border: 1px dashed var(--border-subtle);
-        }
-        .logo-preview-container.show {
-            display: flex;
-        }
-        .logo-preview-img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid var(--border-subtle);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .logo-preview-info {
-            flex: 1;
-            font-size: 0.75rem;
-            color: var(--text-main);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-        .logo-remove-btn {
-            background: none;
-            border: none;
-            color: #ef4444;
-            cursor: pointer;
-            font-size: 0.85rem;
-            padding: 4px;
-            transition: var(--transition);
-        }
-        .logo-remove-btn:hover {
-            color: #dc2626;
-        }
-
-        .password-toggle {
-            position: absolute;
-            right: 0.75rem;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            font-size: 0.85rem;
-            padding: 0.25rem;
-            transition: var(--transition);
-            z-index: 2;
-        }
-        .password-toggle:hover {
-            color: var(--text-main);
-        }
-
-        .form-control:hover {
-            border-color: #cbd5e1;
-            background-color: #ffffff;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--border-focus);
-            background-color: #ffffff;
-            box-shadow: 0 0 0 3px var(--primary-glow);
-            transform: translateY(-1px);
-        }
-
-        .input-wrapper:focus-within .input-icon {
-            color: var(--primary);
-        }
-
-        /* Password Strength Meter */
-        .password-strength {
-            margin-top: 0.4rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .strength-bars {
-            flex: 1;
-            height: 4px;
-            background-color: var(--border-subtle);
-            border-radius: 2px;
-            overflow: hidden;
-            display: flex;
-            gap: 2px;
-        }
-        .strength-bar {
-            flex: 1;
-            height: 100%;
-            background-color: transparent;
-            transition: var(--transition);
-        }
-        .strength-text {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .terms-text {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            margin: 1.15rem 0;
-            line-height: 1.4;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-            padding: 0.7rem 1rem;
-            font-size: 0.8125rem;
-            font-weight: 600;
-            border-radius: var(--radius-md);
-            transition: var(--transition);
-            cursor: pointer;
-            border: 1px solid transparent;
-            text-align: center;
-            width: 100%;
-            font-family: inherit;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: #ffffff;
-            box-shadow: var(--shadow-btn);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .auth-footer {
-            text-align: center;
-            margin-top: 1.25rem;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .back-home {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.35rem;
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .back-home:hover {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        /* Modern Toast Notification Styles */
-        #toast-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 360px;
-            width: calc(100% - 40px);
-            pointer-events: none;
-        }
-
-        .toast {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 14px 16px;
-            background: #ffffff;
-            border-radius: var(--radius-md);
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
-            border: 1px solid var(--border-subtle);
-            pointer-events: auto;
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .toast-icon {
-            font-size: 1.1rem;
-            margin-top: 1px;
-            flex-shrink: 0;
-        }
-
-        .toast.success .toast-icon {
-            color: var(--accent);
-        }
-
-        .toast.error .toast-icon {
-            color: #ef4444;
-        }
-
-        .toast-content {
-            flex: 1;
-        }
-
-        .toast-title {
-            font-size: 0.825rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 2px;
-        }
-
-        .toast-message {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        .toast-close {
-            background: none;
-            border: none;
-            color: #94a3b8;
-            cursor: pointer;
-            font-size: 0.8rem;
-            padding: 2px;
-            transition: var(--transition);
-        }
-
-        .toast-close:hover {
-            color: var(--text-main);
-        }
+        .input-icon { position: absolute; left: 0.875rem; color: var(--text-muted); font-size: 0.85rem; transition: var(--transition); pointer-events: none; z-index: 2; }
+        .textarea-wrapper .input-icon { top: 0.75rem; }
+        .logo-preview-container { display: none; align-items: center; gap: 10px; margin-top: 8px; padding: 8px 12px; background: #f1f5f9; border-radius: var(--radius-md); border: 1px dashed var(--border-subtle); }
+        .logo-preview-container.show { display: flex; }
+        .logo-preview-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-subtle); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .logo-preview-info { flex: 1; font-size: 0.75rem; color: var(--text-main); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .logo-remove-btn { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.85rem; padding: 4px; transition: var(--transition); }
+        .logo-remove-btn:hover { color: #dc2626; }
+        .password-toggle { position: absolute; right: 0.75rem; background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.85rem; padding: 0.25rem; transition: var(--transition); z-index: 2; }
+        .password-toggle:hover { color: var(--text-main); }
+        .form-control:hover { border-color: #cbd5e1; background-color: #ffffff; }
+        .form-control:focus { outline: none; border-color: var(--border-focus); background-color: #ffffff; box-shadow: 0 0 0 3px var(--primary-glow); transform: translateY(-1px); }
+        .input-wrapper:focus-within .input-icon { color: var(--primary); }
+        .password-strength { margin-top: 0.4rem; display: flex; align-items: center; gap: 0.5rem; }
+        .strength-bars { flex: 1; height: 4px; background-color: var(--border-subtle); border-radius: 2px; overflow: hidden; display: flex; gap: 2px; }
+        .strength-bar { flex: 1; height: 100%; background-color: transparent; transition: var(--transition); }
+        .strength-text { font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
+        .terms-text { font-size: 0.72rem; color: var(--text-muted); margin: 1.15rem 0; line-height: 1.4; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem; padding: 0.7rem 1rem; font-size: 0.8125rem; font-weight: 600; border-radius: var(--radius-md); transition: var(--transition); cursor: pointer; border: 1px solid transparent; text-align: center; width: 100%; font-family: inherit; }
+        .btn-primary { background-color: var(--primary); color: #ffffff; box-shadow: var(--shadow-btn); }
+        .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35); }
+        .auth-footer { text-align: center; margin-top: 1.25rem; font-size: 0.75rem; color: var(--text-muted); }
+        .back-home { display: flex; align-items: center; justify-content: center; gap: 0.35rem; text-align: center; margin-top: 1rem; font-size: 0.75rem; color: var(--text-muted); }
+        .back-home:hover { color: var(--primary); text-decoration: none; }
+        #toast-container { position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 10px; max-width: 360px; width: calc(100% - 40px); pointer-events: none; }
+        .toast { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; background: #ffffff; border-radius: var(--radius-md); box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08); border: 1px solid var(--border-subtle); pointer-events: auto; opacity: 0; transform: translateY(-20px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .toast.show { opacity: 1; transform: translateY(0); }
+        .toast-icon { font-size: 1.1rem; margin-top: 1px; flex-shrink: 0; }
+        .toast.success .toast-icon { color: var(--accent); }
+        .toast.error .toast-icon { color: #ef4444; }
+        .toast-content { flex: 1; }
+        .toast-title { font-size: 0.825rem; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
+        .toast-message { font-size: 0.75rem; color: var(--text-muted); line-height: 1.4; }
+        .toast-close { background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 0.8rem; padding: 2px; transition: var(--transition); }
+        .toast-close:hover { color: var(--text-main); }
     </style>
 </head>
 <body>
 
-    <!-- Container untuk Toast Notification Modern -->
     <div id="toast-container"></div>
 
     <div class="auth-wrapper">
         <div class="auth-card">
             <div class="auth-header">
-                <a href="index.html" class="logo">
+                <a href="https://sitenexs.site" class="logo">
                     <img src="https://sitenexs.site/assets/logo/logo.png" alt="Sitenexs Logo" class="logo-img" onerror="this.style.display='none'">
                     <span class="logo-text">Sitenexs</span>
                 </a>
@@ -512,14 +194,12 @@
                     </div>
                 </div>
 
-                <!-- Input Logo Bisnis + Area Preview -->
                 <div class="form-group">
-                    <label>Logo Bisnis / Toko <span style="font-weight: normal; color: var(--text-muted);">(Opsional)</span></label>
+                    <label>Logo Bisnis / Toko <span style="font-weight: normal; color: var(--text-muted);">(Opsional, Maks 2MB)</span></label>
                     <div class="input-wrapper">
                         <i class="fas fa-image input-icon"></i>
-                        <input type="file" id="store-logo" accept="image/*" class="form-control" style="padding-top: 0.5rem; padding-bottom: 0.5rem; cursor: pointer;">
+                        <input type="file" id="store-logo" accept="image/jpeg,image/png,image/webp" class="form-control" style="padding-top: 0.5rem; padding-bottom: 0.5rem; cursor: pointer;">
                     </div>
-                    <!-- Container Preview Gambar Logo -->
                     <div id="logo-preview-box" class="logo-preview-container">
                         <img id="logo-preview-img" src="" alt="Pratinjau Logo" class="logo-preview-img">
                         <div class="logo-preview-info" id="logo-file-name"></div>
@@ -527,7 +207,6 @@
                     </div>
                 </div>
 
-                <!-- Tambahan: Alamat Bisnis -->
                 <div class="form-group">
                     <label>Alamat Bisnis / Toko</label>
                     <div class="input-wrapper textarea-wrapper">
@@ -536,7 +215,6 @@
                     </div>
                 </div>
 
-                <!-- Tambahan: Nama Media Sosial Bisnis -->
                 <div class="form-group">
                     <label>Nama Media Sosial Bisnis <span style="font-weight: normal; color: var(--text-muted);">(Opsional)</span></label>
                     <div class="input-wrapper">
@@ -604,7 +282,7 @@
             </form>
 
             <div class="auth-footer">
-                Sudah punya akun Sitenexs? <a href="sign-in.html">Masuk di sini</a>
+                Sudah punya akun Sitenexs? <a href="admin-login.html">Masuk di sini</a>
             </div>
         </div>
 
@@ -613,219 +291,238 @@
         </a>
     </div>
 
-    <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+    <!-- Supabase JS CDN v2 -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    // Konfigurasi Firebase Anda
-    const firebaseConfig = {
-        apiKey: "AIzaSyDuN4zlRaSnmcUSuXE_E84IE7d3Mz8E-N4",
-        authDomain: "sitenexs-62919.firebaseapp.com",
-        projectId: "sitenexs-62919",
-        storageBucket: "sitenexs-62919.firebasestorage.app",
-        messagingSenderId: "1060348110644",
-        appId: "1:1060348110644:web:e45af14d5f26a9cf8e6761",
-        measurementId: "G-C7YL0Q7YRQ"
-    };
+    <script>
+        // Konfigurasi Supabase
+        const SUPABASE_URL = "https://mlvzybhlgohekytjeosv.supabase.co";
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1sdnp5YmhsZ29oZWt5dGplb3N2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTEwMTk3ODksImV4cCI6MjEwNjU5NTc4OX0.rCXjNkAbhmyXesE5p9we_V5oUrLaQCQ1sOxhCRK66vk";
 
-    // Inisialisasi Firebase, Auth, dan Firestore
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    // Fungsi Global Toast Notification yang Bagus & Elegan
-    function showToast(title, message, type = 'success') {
-        const container = document.getElementById('toast-container');
-        
-        const toast = document.createElement('div');
-        toast.className = `toast ${type}`;
-        
-        const iconClass = type === 'success' ? 'fa-solid fa-circle-check' : 'fa-solid fa-circle-exclamation';
-        
-        toast.innerHTML = `
-            <div class="toast-icon"><i class="${iconClass}"></i></div>
-            <div class="toast-content">
-                <div class="toast-title">${title}</div>
-                <div class="toast-message">${message}</div>
-            </div>
-            <button class="toast-close" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
-        `;
-        
-        container.appendChild(toast);
-        
-        setTimeout(() => toast.classList.add('show'), 10);
-        
-        const closeBtn = toast.querySelector('.toast-close');
-        closeBtn.addEventListener('click', () => removeToast(toast));
-        
-        setTimeout(() => removeToast(toast), 4000);
-    }
-
-    function removeToast(toast) {
-        toast.classList.remove('show');
-        setTimeout(() => toast.remove(), 300);
-    }
-
-    // Script untuk Pratinjau Gambar Logo
-    const logoInput = document.getElementById('store-logo');
-    const logoPreviewBox = document.getElementById('logo-preview-box');
-    const logoPreviewImg = document.getElementById('logo-preview-img');
-    const logoFileName = document.getElementById('logo-file-name');
-    const logoRemoveBtn = document.getElementById('logo-remove-btn');
-
-    logoInput.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                logoPreviewImg.src = e.target.result;
-                logoFileName.textContent = file.name;
-                logoPreviewBox.classList.add('show');
+        const { createClient } = supabase;
+        const _supabase = createClient(
+            SUPABASE_URL,
+            SUPABASE_ANON_KEY,
+            {
+                auth: {
+                    persistSession: true,
+                    autoRefreshToken: true,
+                    detectSessionInUrl: false
+                }
             }
-            reader.readAsDataURL(file);
-        }
-    });
+        );
 
-    logoRemoveBtn.addEventListener('click', function() {
-        logoInput.value = '';
-        logoPreviewImg.src = '';
-        logoFileName.textContent = '';
-        logoPreviewBox.classList.remove('show');
-    });
-
-    // Auto-save form inputs ke localStorage (kecuali password & file logo)
-    const fields = ['owner-name', 'store-name', 'store-address', 'store-social', 'email-input', 'whatsapp', 'service-select'];
-    fields.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-            const saved = localStorage.getItem('draft_' + id);
-            if (saved) el.value = saved;
-            el.addEventListener('input', () => localStorage.setItem('draft_' + id, el.value));
-        }
-    });
-
-    // Fitur Lihat / Sembunyikan Password
-    const togglePasswordBtn = document.getElementById('toggle-password');
-    const passwordInput = document.getElementById('password-input');
-    const eyeIcon = document.getElementById('eye-icon');
-
-    togglePasswordBtn.addEventListener('click', () => {
-        const isPassword = passwordInput.type === 'password';
-        passwordInput.type = isPassword ? 'text' : 'password';
-        eyeIcon.classList.toggle('fa-eye', !isPassword);
-        eyeIcon.classList.toggle('fa-eye-slash', isPassword);
-    });
-
-    // Password Strength Indicator Logic
-    const bar1 = document.getElementById('bar-1');
-    const bar2 = document.getElementById('bar-2');
-    const bar3 = document.getElementById('bar-3');
-    const strengthText = document.getElementById('strength-text');
-
-    passwordInput.addEventListener('input', () => {
-        const val = passwordInput.value;
-        bar1.style.backgroundColor = 'transparent';
-        bar2.style.backgroundColor = 'transparent';
-        bar3.style.backgroundColor = 'transparent';
-
-        if (val.length === 0) {
-            strengthText.textContent = 'Minimal 6 karakter';
-            return;
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            const iconClass = type === 'success' ? 'fa-solid fa-circle-check' : 'fa-solid fa-circle-exclamation';
+            toast.innerHTML = `
+                <div class="toast-icon"><i class="${iconClass}"></i></div>
+                <div class="toast-content">
+                    <div class="toast-title">${title}</div>
+                    <div class="toast-message">${message}</div>
+                </div>
+                <button class="toast-close" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+            `;
+            container.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 10);
+            toast.querySelector('.toast-close').addEventListener('click', () => removeToast(toast));
+            setTimeout(() => removeToast(toast), 5000);
         }
 
-        if (val.length < 6) {
-            bar1.style.backgroundColor = '#ef4444';
-            strengthText.textContent = 'Terlalu pendek';
-        } else if (val.length < 8) {
-            bar1.style.backgroundColor = '#f59e0b';
-            bar2.style.backgroundColor = '#f59e0b';
-            strengthText.textContent = 'Cukup';
-        } else {
-            bar1.style.backgroundColor = '#10b981';
-            bar2.style.backgroundColor = '#10b981';
-            bar3.style.backgroundColor = '#10b981';
-            strengthText.textContent = 'Kuat';
+        function removeToast(toast) {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
         }
-    });
 
-    // Mapping Halaman Layanan
-    const serviceRoutes = {
-        'katalog': 'katalog.html',
-        'presensi': 'https://presensi.sitenexs.site',
-        'kasir': 'kasir.html',
-        'booking': 'https://usahaweb.sitenexs.site/order'
-    };
+        const logoInput = document.getElementById('store-logo');
+        const logoPreviewBox = document.getElementById('logo-preview-box');
+        const logoPreviewImg = document.getElementById('logo-preview-img');
+        const logoFileName = document.getElementById('logo-file-name');
+        const logoRemoveBtn = document.getElementById('logo-remove-btn');
 
-    // Aksi Register Terhubung ke Firebase
-    document.getElementById('register-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const ownerName = document.getElementById('owner-name').value;
-        const storeName = document.getElementById('store-name').value;
-        const storeAddress = document.getElementById('store-address').value;
-        const storeSocial = document.getElementById('store-social').value;
-        const email = document.getElementById('email-input').value.trim();
-        const whatsapp = document.getElementById('whatsapp').value;
-        const selectedService = document.getElementById('service-select').value;
-        const password = passwordInput.value;
+        logoInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                if (file.size > 2 * 1024 * 1024) {
+                    showToast('Ukuran Terlalu Besar', 'File logo maksimal berukuran 2 MB.', 'error');
+                    logoInput.value = '';
+                    return;
+                }
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    logoPreviewImg.src = e.target.result;
+                    logoFileName.textContent = file.name;
+                    logoPreviewBox.classList.add('show');
+                }
+                reader.readAsDataURL(file);
+            }
+        });
 
-        const submitBtn = e.target.querySelector('button[type="submit"]');
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses Akun...';
-        submitBtn.style.opacity = '0.8';
-        submitBtn.disabled = true;
+        logoRemoveBtn.addEventListener('click', function() {
+            logoInput.value = '';
+            logoPreviewImg.src = '';
+            logoFileName.textContent = '';
+            logoPreviewBox.classList.remove('show');
+        });
 
-        try {
-            // 1. Buat akun menggunakan Firebase Authentication
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
+        const fields = ['owner-name', 'store-name', 'store-address', 'store-social', 'email-input', 'whatsapp', 'service-select'];
+        fields.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                const saved = localStorage.getItem('draft_' + id);
+                if (saved) el.value = saved;
+                el.addEventListener('input', () => localStorage.setItem('draft_' + id, el.value));
+            }
+        });
 
-            // 2. Simpan data profil lengkap ke Firestore database pada koleksi "users"
-            await setDoc(doc(db, "users", user.uid), {
-                uid: user.uid,
-                ownerName: ownerName,
-                storeName: storeName,
-                storeAddress: storeAddress,
-                storeSocial: storeSocial || '-',
-                email: email,
-                whatsapp: whatsapp,
-                service: selectedService,
-                createdAt: new Date().toISOString()
-            });
+        const togglePasswordBtn = document.getElementById('toggle-password');
+        const passwordInput = document.getElementById('password-input');
+        const eyeIcon = document.getElementById('eye-icon');
 
-            // Bersihkan draft tersimpan
-            fields.forEach(id => localStorage.removeItem('draft_' + id));
-            localStorage.setItem('user_service', selectedService);
+        togglePasswordBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            eyeIcon.classList.toggle('fa-eye', !isPassword);
+            eyeIcon.classList.toggle('fa-eye-slash', isPassword);
+        });
 
-            // Tampilkan toast sukses yang elegan sebelum pindah halaman
-            showToast('Pendaftaran Berhasil!', 'Akun Anda berhasil dibuat. Mengalihkan ke halaman layanan...', 'success');
+        const bar1 = document.getElementById('bar-1');
+        const bar2 = document.getElementById('bar-2');
+        const bar3 = document.getElementById('bar-3');
+        const strengthText = document.getElementById('strength-text');
 
-            // Arahkan ke halaman layanan terkait setelah jeda singkat
-            const targetPage = serviceRoutes[selectedService] || 'https://sitenexs.site';
-            setTimeout(() => {
-                window.location.href = targetPage;
-            }, 1500);
+        passwordInput.addEventListener('input', () => {
+            const val = passwordInput.value;
+            bar1.style.backgroundColor = 'transparent';
+            bar2.style.backgroundColor = 'transparent';
+            bar3.style.backgroundColor = 'transparent';
 
-        } catch (error) {
-            console.error("Gagal mendaftar:", error.message);
+            if (val.length === 0) {
+                strengthText.textContent = 'Minimal 6 karakter';
+                return;
+            }
+            if (val.length < 6) {
+                bar1.style.backgroundColor = '#ef4444';
+                strengthText.textContent = 'Terlalu pendek';
+            } else if (val.length < 8) {
+                bar1.style.backgroundColor = '#f59e0b';
+                bar2.style.backgroundColor = '#f59e0b';
+                strengthText.textContent = 'Cukup';
+            } else {
+                bar1.style.backgroundColor = '#10b981';
+                bar2.style.backgroundColor = '#10b981';
+                bar3.style.backgroundColor = '#10b981';
+                strengthText.textContent = 'Kuat';
+            }
+        });
+
+        const serviceRoutes = {
+            'katalog': 'katalog.html',
+            'presensi': 'https://presensi.sitenexs.site',
+            'kasir': 'kasir.html',
+            'booking': 'https://usahaweb.sitenexs.site/order'
+        };
+
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            let errorMessage = error.message;
-            if (error.code === 'auth/email-already-in-use') {
-                errorMessage = 'Email ini sudah terdaftar. Silakan gunakan email lain atau masuk.';
-            } else if (error.code === 'auth/weak-password') {
-                errorMessage = 'Kata sandi terlalu lemah. Gunakan minimal 6 karakter.';
-            } else if (error.code === 'auth/invalid-email') {
-                errorMessage = 'Format alamat email tidak valid.';
+            const ownerName = document.getElementById('owner-name').value.trim();
+            const storeName = document.getElementById('store-name').value.trim();
+            const storeAddress = document.getElementById('store-address').value.trim();
+            const storeSocial = document.getElementById('store-social').value.trim();
+            const email = document.getElementById('email-input').value.trim();
+            const whatsapp = document.getElementById('whatsapp').value.trim();
+            const selectedService = document.getElementById('service-select').value;
+            const password = passwordInput.value;
+
+            if (password.length < 6) {
+                showToast('Validasi Gagal', 'Kata sandi minimal harus 6 karakter.', 'error');
+                return;
             }
 
-            showToast('Pendaftaran Gagal', errorMessage, 'error');
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Memproses Akun...';
+            submitBtn.style.opacity = '0.8';
+            submitBtn.disabled = true;
 
-            submitBtn.innerHTML = '<i class="fas fa-user-plus"></i> Daftar Sekarang';
-            submitBtn.style.opacity = '1';
-            submitBtn.disabled = false;
-        }
-    });
-</script>
+            try {
+                // 1. Coba signup auth standar
+                let userId;
+                const { data: authData, error: authError } = await _supabase.auth.signUp({
+                    email: email,
+                    password: password
+                });
 
+                if (authError) {
+                    // Jika terkena batasan rate limit atau email sudah terdaftar
+                    if (authError.message.toLowerCase().includes('rate limit')) {
+                        throw new Error('Batas pengiriman email tercapai (Rate Limit). Silakan matikan "Confirm email" di Dashboard Supabase Authentication agar pendaftaran instan tanpa email.');
+                    }
+                    throw authError;
+                }
+
+                userId = authData.user ? authData.user.id : 'temp_' + Date.now();
+
+                // 2. Upload logo jika ada
+                let logoUrl = null;
+                const logoFile = logoInput.files[0];
+                if (logoFile) {
+                    const fileExt = logoFile.name.split('.').pop();
+                    const fileName = `${userId}/${Date.now()}.${fileExt}`;
+                    const { error: uploadError } = await _supabase.storage
+                        .from('business-logos')
+                        .upload(fileName, logoFile);
+
+                    if (uploadError) {
+                        console.warn('Upload logo gagal, melanjutkan tanpa logo:', uploadError.message);
+                    } else {
+                        const { data: publicData } = _supabase.storage
+                            .from('business-logos')
+                            .getPublicUrl(fileName);
+                        logoUrl = publicData.publicUrl;
+                    }
+                }
+
+                // 3. Simpan data profil ke tabel clients
+                const { error: dbError } = await _supabase.from('clients').insert([{
+                    uid: userId,
+                    owner_name: ownerName,
+                    store_name: storeName,
+                    store_logo: logoUrl,
+                    store_address: storeAddress,
+                    store_social: storeSocial || null,
+                    email: email,
+                    whatsapp: whatsapp,
+                    service: selectedService
+                }]);
+
+                if (dbError) throw new Error('Gagal menyimpan profil ke database: ' + dbError.message);
+
+                // Bersihkan draft
+                fields.forEach(id => localStorage.removeItem('draft_' + id));
+
+                showToast('Pendaftaran Berhasil!', 'Akun Anda berhasil dibuat. Mengalihkan ke layanan...', 'success');
+
+                const targetPage = serviceRoutes[selectedService] || 'https://sitenexs.site';
+                setTimeout(() => {
+                    window.location.href = targetPage;
+                }, 1500);
+
+            } catch (error) {
+                console.error("Gagal mendaftar:", error);
+                let message = error.message;
+                if (message.includes('already registered')) {
+                    message = 'Email ini sudah terdaftar. Silakan gunakan email lain atau masuk.';
+                }
+                showToast('Pendaftaran Gagal', message, 'error');
+
+                submitBtn.innerHTML = '<i class="fas fa-user-plus"></i> Daftar Sekarang';
+                submitBtn.style.opacity = '1';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
 </body>
 </html>
